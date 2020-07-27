@@ -1,0 +1,28 @@
+@tailwind base;
+
+h1 {
+    @apply text-4xl font-bold pb-3;
+}
+h2 {
+    @apply text-3xl font-bold pb-3;
+}
+h3 {
+    @apply text-2xl font-bold pb-3;
+}
+h4 {
+    @apply text-xl font-bold pb-3;
+}
+h5 {
+    @apply text-lg font-bold pb-3;
+}
+h6 {
+    @apply font-bold pb-3;
+}
+p {
+    @apply pb-3;
+}
+
+
+@tailwind components;
+
+@tailwind utilities;

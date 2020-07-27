@@ -29,5 +29,26 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => env('FACEBOOK_APP_ID'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect' => 'https://mbj.akddev.net/facebook/callback'
+    ],
+    'twitter' => [
+        'client_id' => env('TWITTER_API_KEY'),
+        'client_secret' => env('TWITTER_API_SECRET'),
+        'api_token' => env('TWITTER_API_TOKEN'),
+        'redirect' => 'https://mbj.akddev.net/twitter/callback'
+    ],
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => 'https://mbj.akddev.net/google/callback'
+    ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'https://mbj.akddev.net/github/callback',
+    ],
 
 ];
