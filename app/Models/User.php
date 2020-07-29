@@ -11,13 +11,9 @@ class User extends Authenticatable
 {
     use Notifiable, HasApiTokens;
 
-    protected $guarded = [
-        'id'
-    ];
+    protected $guarded =  ['id'];
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token',];
 
     protected $casts = [
         'email_verified_at' => 'datetime',
@@ -30,6 +26,17 @@ class User extends Authenticatable
     
     public function social()
     {
-        return $this->hasMany(Social::class,'id','user_id');
+        return $this->hasMany(Social::class,'user_id','id');
+    }
+
+    public function hasSocial($type)
+    {
+        foreach($this->social as $social) {
+            if($social->type == $type) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

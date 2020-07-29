@@ -34,6 +34,10 @@ Route::get('/google', 'Social\GoogleController@google')->name('google');
 Route::get('/google/callback','Social\GoogleController@callback');
 
 Route::get('/profile','ProfileController@index')->name('profile');
+Route::get('connect/google', 'Social\GoogleController@connect')->name('connect.google');
+Route::get('connect/twitter', 'Social\TwitterController@connect')->name('connect.twitter');
+Route::get('connect/facebook', 'Social\FacebookController@connect')->name('connect.facebook');
+Route::get('connect/github', 'Social\GithubController@connect')->name('connect.github');
 
 
 
