@@ -50,5 +50,4 @@ return [
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
         'redirect' => 'https://mbj.akddev.net/github/callback',
     ],
-
 ];

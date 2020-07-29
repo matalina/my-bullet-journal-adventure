@@ -26,15 +26,19 @@ class Message extends Component
      */
     public function render()
     {
-        $this->classes = 'p-3 mb-8 mx-auto text-center';
+        $this->classes = 'p-3 mx-auto text-center w-full';
         
         if($this->message != null) {
             if($this->message['success']) {
                $this->classes .= ' bg-green-200 text-green-800';
             }
             else {
-                $this->classes = ' bg-red-200 text-red-800';
+                $this->classes .= ' bg-red-200 text-red-800';
             }
+        }
+        else {
+            $this->classes .= " bg-gray-100 text-gray-500";
+            $this->message['message'] = 'No messages.';
         }
           
         return view('components.message');

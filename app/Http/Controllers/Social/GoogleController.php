@@ -17,6 +17,15 @@ class GoogleController extends SocialController
     
     public function callback()
     {
+        if(auth()->check()) {
+            $providerUser = Socialite::driver('google')->user();
+        
+            $message = $this->connectSocial('google', $providerUser);
+
+            session()->flash('message', $message);
+            return redirect()->route('profile');
+        }
+        
         $user = Socialite::driver('google')->user();
         
         $social = Social::where('type','=','google')

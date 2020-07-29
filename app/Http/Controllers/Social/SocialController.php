@@ -73,6 +73,47 @@ class SocialController extends Controller
             ];
     }
     
+    protected function connectSocial($type, $user)
+    {
+        
+        $social = [
+            'type' => $type,
+            'email' => $user->email,
+            'token' => $user->token,
+        ];
+        
+        if(property_exists($user,'expiresIn')) {
+            $data['expires'] = $user->expiresIn;
+        }
+           
+        if(property_exists($user,'refreshToken')) {
+            $data['refresh'] = $user->refreshToken;
+        }
+        
+        if(property_exists($user,'name')) {
+            $new_user['name'] = $user->name;
+        }
+           
+        if(property_exists($user,'tokenSecret')) {
+            $data['tokenSecret'] = $user->tokenSecret;
+        }
+        
+        if(property_exists($user,'expiresIn')) {
+            $data['expires'] = $user->expiresIn;
+        }
+         
+        $social['user_id'] = auth()->user()->id;
+        
+        Social::create($social);
+            
+        return [
+            'success' => true,
+            'message' => 'Account Successfully connected to social platform.',
+            'code' => 'U1004',
+            'info' => [],
+        ];
+    }
+    
     protected function login(Social $social) 
     {
         \Auth::loginUsingId($social->user_id, true);

@@ -591,6 +591,10 @@ video {
   height: auto;
 }
 
+main {
+  padding: 0.75rem;
+}
+
 h1 {
   font-size: 2.25rem;
   font-weight: 700;
@@ -87207,3 +87211,4 @@ p {
     transition-delay: 1000ms;
   }
 }
+

@@ -17,6 +17,15 @@ class GithubController extends SocialController
     
     public function callback()
     {
+        if(auth()->check()) {
+            $providerUser = Socialite::driver('github')->user();
+        
+            $message = $this->connectSocial('github', $providerUser);
+
+            session()->flash('message', $message);
+            return redirect()->route('profile');
+        }
+        
         $user = Socialite::driver('github')->user();
         
         $social = Social::where('type','=','github')

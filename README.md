@@ -216,10 +216,13 @@ return [
 
 Message Codes:
 
+E1000 - Not Authorized
+
 U1000 - User created and logged info
 U1001 - User logged in successfully via web app
 U1002 - User logged in successfully via api
 U1003 - Successfully logged out
+U1004 - Account successfully connected to social platform
 
 U9000 - Invalid credentials
 U9001 - Email already exists

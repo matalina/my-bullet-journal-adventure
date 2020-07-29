@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
     <h1>Profile</h1>
 
     <ul>
@@ -19,7 +18,11 @@
                 <i class="fab fa-twitter"></i> Connect
             </x-button>
         @else
-            <i class="fab fa-twitter"></i> Connected
+            <span
+                class="p-3 border-solid border border-blue-900 m-2 rounded  opacity-75 cursor-not-allowed"   
+            >
+                <i class="fab fa-twitter"></i> Connected
+            </span>
         @endif
 
         @if(! $user->hasSocial('facebook'))
@@ -30,7 +33,11 @@
                 <i class="fab fa-facebook"></i> Connect
             </x-button>
         @else
+            <span
+                class="p-3 border-solid border border-blue-900 m-2 rounded  opacity-75 cursor-not-allowed"   
+            >
                 <i class="fab fa-facebook"></i> Connected
+            </span>
         @endif
 
         @if(! $user->hasSocial('google'))
@@ -41,7 +48,11 @@
                 <i class="fab fa-google"></i> Connect
             </x-button>
         @else
-            <i class="fab fa-google"></i> Connected
+            <span
+                class="p-3 border-solid border border-blue-900 m-2 rounded  opacity-75 cursor-not-allowed"   
+            >
+                <i class="fab fa-google"></i> Connected
+            </span>
         @endif
         @if(! $user->hasSocial('github'))
             <x-button
@@ -51,8 +62,11 @@
                 <i class="fab fa-github"></i> Connect
             </x-button>
         @else
+            <span
+                class="p-3 border-solid border border-blue-900 m-2 rounded  opacity-75 cursor-not-allowed"   
+            >
                 <i class="fab fa-github"></i> Connected
+            </span>
         @endif
     </div>
-</div>
 @endsection

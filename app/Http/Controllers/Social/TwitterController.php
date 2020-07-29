@@ -17,6 +17,15 @@ class TwitterController extends SocialController
     
     public function callback()
     {
+        if(auth()->check()) {
+            $providerUser = Socialite::driver('twitter')->user();
+        
+            $message = $this->connectSocial('twitter', $providerUser);
+
+            session()->flash('message', $message);
+            return redirect()->route('profile');
+        }
+        
         $user = Socialite::driver('twitter')->user();
         
         $social = Social::where('type','=','twitter')

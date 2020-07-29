@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'SiteController@index')->name('home');
+Route::get('/terms-of-service','SiteController@tos')->name('tos');
+Route::get('/privacy-policy','SiteController@privacy')->name('privacy');
 
 Route::get('/login','SiteController@create')->name('login');
 Route::post('/register','SiteController@create')->name('register');
 Route::post('logout','SiteController@logout')->name('logout');
 
-Route::get('/home', 'HomeController@index')->name('dashboard');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 Route::get('/facebook', 'Social\FacebookController@facebook')->name('facebook');
 Route::get('/facebook/callback','Social\FacebookController@callback');
@@ -34,10 +36,10 @@ Route::get('/google', 'Social\GoogleController@google')->name('google');
 Route::get('/google/callback','Social\GoogleController@callback');
 
 Route::get('/profile','ProfileController@index')->name('profile');
-Route::get('connect/google', 'Social\GoogleController@connect')->name('connect.google');
-Route::get('connect/twitter', 'Social\TwitterController@connect')->name('connect.twitter');
-Route::get('connect/facebook', 'Social\FacebookController@connect')->name('connect.facebook');
-Route::get('connect/github', 'Social\GithubController@connect')->name('connect.github');
+Route::get('connect/google', 'Social\GoogleController@google')->name('connect.google');
+Route::get('connect/twitter', 'Social\TwitterController@twitter')->name('connect.twitter');
+Route::get('connect/facebook', 'Social\FacebookController@facebook')->name('connect.facebook');
+Route::get('connect/github', 'Social\GithubController@github')->name('connect.github');
 
 
 

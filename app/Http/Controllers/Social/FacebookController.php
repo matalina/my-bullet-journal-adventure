@@ -17,6 +17,15 @@ class FacebookController extends SocialController
     
     public function callback()
     {
+        if(auth()->check()) {
+            $providerUser = Socialite::driver('facebook')->user();
+        
+            $message = $this->connectSocial('facebook', $providerUser);
+
+            session()->flash('message', $message);
+            return redirect()->route('profile');
+        }
+        
         $user = Socialite::driver('facebook')->user();
         
         $social = Social::where('type','=','facebook')

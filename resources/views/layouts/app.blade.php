@@ -18,15 +18,21 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet"/>
     <livewire:styles/>
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
-    <div id="app">
+<body class="bg-white h-screen antialiased leading-none">
+    <div id="app" class="flex flex-col min-h-screen">
         <nav class="bg-blue-900 shadow m-0 py-6">
             <div class="container mx-auto px-6 md:px-0">
                 <div class="flex items-center justify-center">
                     <div class="mr-6">
-                        <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
+                        @guest
+                        <a href="{{ route('home') }}" class="text-lg font-semibold text-gray-100 no-underline">
                             {{ config('app.name', 'Laravel') }}
                         </a>
+                        @else
+                        <a href="{{ route('dashboard') }}" class="text-lg font-semibold text-gray-100 no-underline">
+                            {{ config('app.name', 'Laravel') }}
+                        </a>
+                        @endguest
                     </div>
                     <div class="flex-1 text-right">
                         @guest
@@ -35,10 +41,10 @@
                             <a class="no-underline hover:underline text-gray-300 text-sm p-3" href="{{ route('login') }}"><i class="fal fa-user-plus"></i> Register</a>
                            
                         @else
-                            <span class="text-gray-300 text-sm pr-4">
+                            <a class="no-underline hover:underline text-gray-300 text-sm p-3" href="{{ route('profile') }}">
                                 <i class="fal fa-user"></i>
                                 {{ Auth::user()->name }}
-                            </span>
+                            </a>
 
                             <span>
                                 <i class="fal fa-sign-out-alt"></i>
@@ -58,9 +64,18 @@
         
         <x-message :message="session('message')"></x-message>
         
-        <main class="mt-8">
+        <main class="flex-grow">
             @yield('content')
         </main>
+        
+        <footer class="text-sm bg-blue-900 text-white py-2 px-5">
+            Copyright 2020 
+            @if(date('Y') != 2020)
+                - {{ date('Y') }}
+            @endif
+            | <a href="{{ route('tos') }}">Terms of Service</a> | 
+            <a href="{{ route('privacy') }}">Privacy Policy</a>
+        </footer>     
     </div>
 </body>
 </html>
