@@ -32,3 +32,8 @@ Route::get('/twitter/callback','Social\TwitterController@callback');
 
 Route::get('/google', 'Social\GoogleController@google')->name('google');
 Route::get('/google/callback','Social\GoogleController@callback');
+
+Route::get('/profile','ProfileController@index')->name('profile');
+
+
+

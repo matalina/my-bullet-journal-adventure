@@ -223,3 +223,4 @@ U1003 - Successfully logged out
 
 U9000 - Invalid credentials
 U9001 - Email already exists
+U9003 - Not Logged In

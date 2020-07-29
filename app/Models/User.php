@@ -27,4 +27,9 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = \Hash::make($value);
     }
+    
+    public function social()
+    {
+        return $this->hasMany(Social::class,'id','user_id');
+    }
 }
