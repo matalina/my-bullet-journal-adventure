@@ -26,7 +26,23 @@ p {
     @apply pb-3;
 }
 
+td, th {
+    @apply p-2;
+}
+
+hr {
+    @apply my-5;
+}
+
+li {
+    @apply ml-3;
+}
+
 @tailwind components;
 
 @tailwind utilities;
+
+#index li a {
+    @apply p-2 block;
+}
 

@@ -17,6 +17,11 @@ For more information checkout [My Bullet Journal Adventure](https://akddevmbj.wo
 <i class="fal fa-user-plus"></i>
 <i class="fal fa-user"></i>
 
+<i class="fal fa-plus"></i>
+<i class="fal fa-angle-right"></i>
+<i class="fal fa-angle-left"></i>
+<i class="fal fa-check"></i>
+
 <i class="fal fa-greater-than"></i>
 <i class="fal fa-less-than"></i>
 <i class="fal fa-times"></i>
@@ -36,7 +41,7 @@ For more information checkout [My Bullet Journal Adventure](https://akddevmbj.wo
 <i class="fal fa-bolt"></i>
 <i class="fal fa-bomb"></i>
 <i class="fal fa-broom"></i>
-<i class="fal fa-check"></i>
+<i class="fal fa-bed"></i>
 <i class="fal fa-clock"></i>
 <i class="fal fa-flag"></i>
 <i class="fal fa-lightbulb-on"></i>
@@ -48,6 +53,19 @@ For more information checkout [My Bullet Journal Adventure](https://akddevmbj.wo
 <i class="fal fa-tag"></i>
 <i class="fal fa-thumbtack"></i>
 <i class="fal fa-trash"></i>
+<i class="fal fa-gift"></i>
+<i class="fal fa-heartbeat"></i>
+<i class="fal fa-paperclip"></i>
+<i class="fal fa-piggy-bank"></i>
+<i class="fal fa-snooze"></i>
+<i class="fal fa-utensils-alt"></i>
+<i class="fal fa-glass"></i>
+<i class="fal fa-walking"></i>
+
+<i class="fal fa-washer"></i>
+<i class="fal fa-receipt"></i>
+<i class="fal fa-lock"></i>
+<i class="fal fa-quote-left"></i>
 ```
 
 Google User Data:
@@ -216,14 +234,14 @@ return [
 
 Message Codes:
 
-E1000 - Not Authorized
+E1000 - Not Authorized  
 
-U1000 - User created and logged info
-U1001 - User logged in successfully via web app
-U1002 - User logged in successfully via api
-U1003 - Successfully logged out
-U1004 - Account successfully connected to social platform
+U1000 - User created and logged info  
+U1001 - User logged in successfully via web app  
+U1002 - User logged in successfully via api  
+U1003 - Successfully logged out  
+U1004 - Account successfully connected to social platform  
 
-U9000 - Invalid credentials
-U9001 - Email already exists
-U9003 - Not Logged In
+U9000 - Invalid credentials  
+U9001 - Email already exists  
+U9003 - Not Logged In  
