@@ -634,6 +634,19 @@ p {
   padding-bottom: 0.75rem;
 }
 
+td, th {
+  padding: 0.5rem;
+}
+
+hr {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+li {
+  margin-left: 0.75rem;
+}
+
 .container {
   width: 100%;
 }
@@ -18166,6 +18179,11 @@ p {
 
 .delay-1000 {
   transition-delay: 1000ms;
+}
+
+#index li a {
+  padding: 0.5rem;
+  display: block;
 }
 
 @media (min-width: 640px) {
