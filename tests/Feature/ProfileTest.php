@@ -29,7 +29,6 @@ class ProfileTest extends TestCase
             ->get('/profile');
 
         $response->assertStatus(200);
-        $response->assertSee('Profile');
         $response->assertSee($user->name);
         $response->assertSee($user->email);
     }
