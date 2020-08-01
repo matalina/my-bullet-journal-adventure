@@ -32,22 +32,22 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_APP_ID'),
         'client_secret' => env('FACEBOOK_SECRET'),
-        'redirect' => 'https://mbj.akddev.net/facebook/callback'
+        'redirect' => url('facebook/callback')
     ],
     'twitter' => [
         'client_id' => env('TWITTER_API_KEY'),
         'client_secret' => env('TWITTER_API_SECRET'),
         'api_token' => env('TWITTER_API_TOKEN'),
-        'redirect' => 'https://mbj.akddev.net/twitter/callback'
+        'redirect' => url('twitter/callback')
     ],
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'https://mbj.akddev.net/google/callback'
+        'redirect' => url('google/callback')
     ],
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'https://mbj.akddev.net/github/callback',
+        'redirect' => url('github/callback'),
     ],
 ];
