@@ -93,10 +93,9 @@ class MiniCalendarWidgetTest extends TestCase
     public function test_widget_has_today()
     {
         $date = Carbon::now();
-        $day = $date->day;
         $user = factory(User::class)->create();
         Livewire::actingAs($user)
             ->test(MiniCalendar::class)
-            ->assertSet('today', $day);
+            ->assertSet('today', $date->toDateString());
     }
 }

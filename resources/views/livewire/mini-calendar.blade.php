@@ -19,16 +19,19 @@
             <div class="p-2 border border-gray-300 text-center">&nbsp;</div>
         @endfor
         @for($i = 1; $i <= $days; $i++)
-            <div class="p-2 border border-blue-900 bg-blue-500 text-center">
-                @if($today == $i)
+            <div class="p-2 border border-blue-900 bg-blue-300 text-center">
+                @if($today == $year.'-'.$month.'-'.$i)
                 <a
-                    class="text-white"
+                    class="text-blue-900"
                     href="{{ route('daily',['year' => $year, 'month' => $month, 'day' => $i]) }}"
                 >
                     {{ $i }}
                 </a>
                 @else
-                    <a href="{{ route('daily',['year' => $year, 'month' => $month, 'day' => $i]) }}">
+                    <a
+                        href="{{ route('daily',['year' => $year, 'month' => $month, 'day' => $i]) }}"
+                        class="text-gray-500"
+                    >
                         {{ $i }}
                     </a>
                 @endif

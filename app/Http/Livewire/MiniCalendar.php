@@ -19,7 +19,7 @@ class MiniCalendar extends Component
         $date = Carbon::now();
         $this->month = $date->monthName;
         $this->year = $date->year;
-        $this->today = $date->day;
+        $this->today = $date->toDateString();
     }
 
     public function render()
