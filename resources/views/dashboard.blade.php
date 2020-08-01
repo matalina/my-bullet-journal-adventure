@@ -4,26 +4,8 @@
 
 <div class="flex">
     <div class="w-1/4 m-2">
-        <div id="calendar" class="w-full d-block">
-            <div class="flex">
-                <x-button
-                    type="button"
-                >          
-                    <i class="fal fa-angle-left"></i>
-                </x-button>
-                <h2 class="flex-1 text-center self-center">July 2020</h2>
-                <x-button
-                    type="button"
-                >          
-                    <i class="fal fa-angle-right"></i>
-                </x-button>
-            </div>
-            <div class="grid grid-cols-7 gap-2">
-                @for($i = 1; $i <= 31; $i++)
-                     <div class="p-2 border border-gray-300 text-center">{{ $i }}</div>                 
-                @endfor                     
-            </div>
-        </div>
+        <livewire:mini-calendar />
+
         <div id="habits" class="w-full d-block mt-5">
             <h2>Habits</h2>
            

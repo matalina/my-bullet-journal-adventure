@@ -27,4 +27,13 @@ class DashboardTest extends TestCase
 
         $response->assertRedirect(route('home'));
     }
+
+    public function test_dashboard_contains_widgets()
+    {
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)
+            ->get(route('dashboard'))
+            ->assertSeeLivewire('mini-calendar');
+    }
 }
